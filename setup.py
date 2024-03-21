@@ -13,7 +13,7 @@ setuptools.setup(
     description="Streamlit component that allows you to run js code with both blocking and non-blocking modes.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/toolittlecakes/streamlit_js",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],
