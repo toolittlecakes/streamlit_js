@@ -1,7 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/python
-# Edit at https://www.toptal.com/developers/gitignore?templates=python
-
-### Python ###
+########################################################################
+# Python - https://github.com/github/gitignore/blob/master/Python.gitignore
+########################################################################
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -98,22 +97,6 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
 # Celery stuff
@@ -124,7 +107,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -156,21 +138,56 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+########################################################################
+# OSX - https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+########################################################################
+.DS_Store
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-### Python Patch ###
-# Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
-poetry.toml
+########################################################################
+# node - https://github.com/github/gitignore/blob/master/Node.gitignore
+########################################################################
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# ruff
-.ruff_cache/
+# Dependency directories
+node_modules/
 
-# LSP config files
-pyrightconfig.json
+# Coverage directory used by tools like istanbul
+coverage/
 
-# End of https://www.toptal.com/developers/gitignore/api/python
+# Lockfiles
+yarn.lock
+package-lock.json
+
+########################################################################
+# JetBrains
+########################################################################
+.idea
+
+########################################################################
+# VSCode
+########################################################################
+.vscode/
+
+streamlit_javascript/frontend/node_modules/
+streamlit_javascript/frontend/.eslintcache
+streamlit_javascript.egg-info/*
+streamlit_javascript.egg-info/PKG-INFO
+Pipfile.lock
+Pipfile
+/poetry.lock
+/.env
+
+########################################################################
+# vim
+########################################################################
+.vim/
