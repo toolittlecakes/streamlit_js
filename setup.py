@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="streamlit-js",
-    version="0.0.1",
+    version="1.0.1",
     author="Nikolay Sheyko",
     author_email="nickolay.sheyko@gmail.com.com",
     description="Streamlit component that allows you to run js code with both blocking and non-blocking modes.",
