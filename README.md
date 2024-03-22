@@ -27,9 +27,10 @@ value = st_js(code='return null;')
 if not value:
     st.write('Loading...')
     st.stop()
-st.write(value)
+st.write(value) # [None]
+st.write(value[0] # None
 
 # This will block the script until the js code is executed
 value = st_js_blocking(code='return null;')
-st.write(value)
+st.write(value) # None
 ```
