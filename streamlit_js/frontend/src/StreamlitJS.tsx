@@ -29,17 +29,16 @@ class StreamlitJS extends StreamlitComponentBase<State> {
 
     const evalWithExceptionHandling = async (code: string) => {
       try {
-        const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor
+        const AsyncFunction = Object.getPrototypeOf(async function () { }).constructor
         const asyncFunction = new AsyncFunction(code);
-        return await asyncFunction();
+        return [await asyncFunction()];
       } catch (error) {
         console.error(error)
-        return String(error)
+        return { error }
       }
     }
-    const result = await evalWithExceptionHandling(code)
-
-    Streamlit.setComponentValue([result])
+    const wrapped_result = await evalWithExceptionHandling(code)
+    Streamlit.setComponentValue(wrapped_result)
     // this.setState(
     //   _prevState => ({ result: result, finished: true }),
     //   () => Streamlit.setComponentValue([this.state.result])

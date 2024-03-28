@@ -55,6 +55,7 @@ def st_js(code: str, key=None):
     list
         [] if the code is still running.
         [<result>] if the code is finished.
+        {"error": <error>} if the code throws an error.
         Where <result> is the value of executed code. It has to be serializable.
         It's already deserialized by Streamlit into Python object.
     """
@@ -65,6 +66,7 @@ def st_js_blocking(code, key=None):
     """
     This is a blocking version of streamlit_js.
     It will block the script until the component is finished and result is returned.
+    In case of an error, it will raise an exception.
     Then it Streamlit will rerun the script as usual when something changes.
     Usually it finishes in one rerun, but it's not guaranteed by this function due to Streamlit's nature.
 
@@ -87,6 +89,10 @@ def st_js_blocking(code, key=None):
     result = st_js(code=code, key=key)
     if not result:
         st.stop()
+    if isinstance(result, dict):
+        assert "error" in result
+        raise Exception(result["error"])
+
     return result[0]
 
 
