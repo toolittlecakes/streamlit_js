@@ -16,7 +16,7 @@ class StreamlitJS extends StreamlitComponentBase<State> {
     super(props)
     this.state = { result: null, finished: false }
     // Streamlit.setFrameHeight(0)
-    // Streamlit.setComponentReady()
+    Streamlit.setComponentReady()
   }
 
   componentDidMount = async () => {
