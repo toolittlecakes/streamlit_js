@@ -38,11 +38,10 @@ class StreamlitJS extends StreamlitComponentBase<State> {
       }
     }
     const wrapped_result = await evalWithExceptionHandling(code)
-    Streamlit.setComponentValue(wrapped_result)
-    // this.setState(
-    //   _prevState => ({ result: result, finished: true }),
-    //   () => Streamlit.setComponentValue([this.state.result])
-    // )
+    this.setState(
+      _prevState => ({ result: wrapped_result, finished: true }),
+      () => Streamlit.setComponentValue(this.state.result)
+    )
 
     return null
   }
