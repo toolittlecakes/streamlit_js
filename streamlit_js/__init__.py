@@ -37,7 +37,7 @@ else:
     _component_func = components.declare_component("streamlit_js", path=build_dir)
 
 
-def st_js(code: str, key=None):
+def st_js(code: str, expect_result=True, key=None):
     """
     This is a non-blocking streamlit component that executes JavaScript code.
 
@@ -59,7 +59,9 @@ def st_js(code: str, key=None):
         Where <result> is the value of executed code. It has to be serializable.
         It's already deserialized by Streamlit into Python object.
     """
-    return _component_func(code=code, key=key, default=[], height=0)
+    return _component_func(
+        code=code, expect_result=expect_result, key=key, default=[], height=0
+    )
 
 
 def st_js_blocking(code, key=None):

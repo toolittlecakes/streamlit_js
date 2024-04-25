@@ -26,6 +26,7 @@ class StreamlitJS extends StreamlitComponentBase<State> {
       return null
     }
     const code = this.props.args["code"]
+    const expectResult = this.props.args["expect_result"]
 
     const evalWithExceptionHandling = async (code: string) => {
       try {
@@ -38,9 +39,14 @@ class StreamlitJS extends StreamlitComponentBase<State> {
       }
     }
     const wrapped_result = await evalWithExceptionHandling(code)
+
     this.setState(
       _prevState => ({ result: wrapped_result, finished: true }),
-      () => Streamlit.setComponentValue(this.state.result)
+      () => {
+        if (expectResult) {
+          Streamlit.setComponentValue(this.state.result)
+        }
+      }
     )
 
     return null
